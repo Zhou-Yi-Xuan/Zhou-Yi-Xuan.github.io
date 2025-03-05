@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<style>
+@media (max-width: 767px) { body { padding: 15px; } }
+body {
+	box-sizing: border-box; min-width: 200px;
+	max-width: 980px; margin: 0 auto; padding: 45px;
+}
+</style>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<link rel="icon type" href="../title.jpeg">
+	<title>MarkDown</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# **MarkDown 围栏代码块**
+
+Markdown基本语法允许您通过将行缩进四个空格或一个制表符来创建[代码块](./code.html)。如果发现不方便，请尝试使用受保护的代码块。根据Markdown处理器或编辑器的不同，您将在代码块之前和之后的行上使用三个反引号（(`&amp;&amp;&amp;`）或三个波浪号（～～～）。
+
+```
+
+&acute;&acute;&acute;
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+&acute;&acute;&acute;
+
+```
+
+呈现的输出如下所示：
+
+```
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
+
+## **语法高亮**
+
+许多Markdown处理器都支持受围栏代码块的语法突出显示。使用此功能，您可以为编写代码的任何语言添加颜色突出显示。要添加语法突出显示，请在受防护的代码块之前的反引号旁边指定一种语言。
+
+```
+&acute;&acute;&acute;json
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+&acute;&acute;&acute;
+```
+
+呈现的输出如下所示：
+
+{ "firstName": "John", "lastName": "Smith", "age": 25 }
+
+	</textarea><br><br>
+  <div class="footer-href">
+    <div class="footer-left">
+	  <h4 style="text-align: left;">←<a href="./tables.html">表格语法</a></h4>
+	</div><div class="footer-right">
+	  <h4 style="text-align: right;"><a href="">语法</a>→</h4>
+	</div>
+  </div>
+
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>

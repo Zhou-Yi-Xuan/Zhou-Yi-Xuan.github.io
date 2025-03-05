@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="icon type" href="./logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+  <style>
+	@media (max-width: 767px) { body { padding: 15px; } }
+	body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	}
+	.footer-href { margin: 0px; padding: 0px; width: auto; }
+	.footer-right { float: right; color: green; }
+  </style>
+  <title>MarkDown</title>
+</head>
+<body>
+  <div id="$m" class="markdown-body"></div>
+  <textarea id="$t" style="display:none">
+# **MarkDown 学习文档**
+
+## 致谢 / 前言
+
+本教程出自[**Markdown 官方教程**](https://markdown.com.cn/basic-syntax/)，并根据作者经验进行了修改。
+
+我曾经尝试过 **LaTeX** ，它给我的感觉就是一个很强的 **Word** ，众所周知 **Word** 是一个经典的 *所见即所得* 的排版系统，而 **LaTeX** 则不同它必须像程序员一样去编写代码，通过代码编排自己想呈现的效果，这对于非科班出身的用户来说它的学习成本实在是太高，打个比方， 如果**Word** 的学习曲线是平缓的山丘，那么 **LaTeX** 的就是青藏高原。
+
+想必用过 **LaTeX** 的同志们一定知道它恐怖。
+
+后来我就把 **LaTeX** 丢到一边，转而使用 markdown 在刚开始时我对 markdown 的表现很满意，但它只能表现在支持 markdown 的编辑器上（如：VSCode），这使得 markdown 代码只能在这些编辑器上浏览。
+
+**核心特点**
+
+- **简洁性**：Markdown使用简单的符号来标记文本格式，如#用于标题，*或_用于斜体和粗体，-或+用于列表等，这些符号直观且易于记忆。
+- **可读性**：即使不经过转换，Markdown文档本身也具有很好的可读性，适合直接分享或阅读。
+- **跨平台**：Markdown文件通常以.md或.markdown为扩展名，可以在任何文本编辑器中编写，适用于所有操作系统。
+- **广泛支持**：GitHub、GitLab、Reddit、Stack Overflow等众多平台都支持Markdown格式，用于编写文档、评论、简历、甚至制作简单的网页。
+- **扩展性**：虽然Markdown基础语法简单，但通过各种解析器的扩展，可以支持代码块高亮、表格、脚注、数学公式等高级功能。
+- **转换能力**：Markdown文档可以轻松转换为HTML、PDF、Word文档等多种格式，便于在不同场景下使用。
+
+## **MakeDown 基本语法**
+
+Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。
+
+在线体验一下 [Markdown在线编辑器](https://markdown.com.cn/editor/)
+
+
+千万不要被「标记」、「语言」吓到，Markdown的语法十分简单，常用的标记符号不超过十个，用于日常写作记录绰绰有余，不到半小时就能完全掌握。
+
+就是这十个不到的标记符号，却能让人优雅地沉浸式记录，专注内容而不是纠结排版，达到「心中无尘，码字入神」的境界。
+
+让我们从 [Markdown 标题语法](./md_header.html)开始学习吧。
+
+
+## **MarkDown 扩展语法**
+
+John Gruber的原始设计文档中概述的基本语法主要是为了应付大多数情况下的日常所需元素，但对于某些人来说还不够，这就是扩展语法的用武之地。
+
+一些个人和组织开始通过添加其他元素（例如表，代码块，语法突出显示，URL自动链接和脚注）来扩展基本语法。可以通过使用基于基本Markdown语法的轻量级标记语言，或通过向兼容的Markdown处理器添加扩展来启用这些元素。
+
+  </textarea>
+  <div class="footer-href">
+    <div class="footer-right">
+	  <h4 style="text-align: right;"><a href="./md_header.html">标题语法</a>→</h4>
+	</div>
+  </div>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+</body>
+</html>

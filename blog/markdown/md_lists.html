@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href {
+		  margin: 0px; padding: 0px; width: auto;
+	  }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }
+	  .footer-right { float: right; color: green; }
+	</style>
+	<title>MarkDown 列表语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# MarkDown 列表语法
+
+可以将多个条目组织成有序或无序列表。
+
+# 有序列表
+
+要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。
+
+| MarkDown语法| HTML | 语法预览 |
+|---|---|---|
+| `1. First item`<br>`2. Second item`<br>`3. Third item`<br>`4. Fourth item ` | `&lt;ol&gt;`<br>`&lt;li&gt;First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ol&gt;` |  1. First item<br>2. Second item<br>3. Third item<br>4. Fourth item 
+| `1. First item`<br>`1. Second item`<br>`1. Third item`<br>`1. Fourth item ` | `&lt;ol&gt;`<br>`&lt;li&gt;First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ol&gt;` | 1. First item<br>2. Second item<br>3. Third item<br>4. Fourth item |
+| `1. First item`<br>`8. Second item`<br>`3. Third item`<br>`5. Fourth item ` | `&lt;ol&gt;`<br>`&lt;li&gt;First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ol&gt;` | 1. First item<br>2. Second item<br>3. Third item<br>4. Fourth item |
+| `1. First item`<br>`2. Second item`<br>`3. Third item`<br>`&nbsp;&nbsp;&nbsp;&nbsp;1. Indented item`<br>`&nbsp;&nbsp;&nbsp;&nbsp;2. Indented item`<br>`4. Fourth item ` | `&lt;ol&gt;`<br>`&lt;li&gt;First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item`<br>`&lt;ol&gt;`<br>`&lt;li&gt;Indented item&lt;/li&gt;`<br>`&lt;li&gt;Indented item&lt;/li&gt;`<br>`&lt;/ol&gt;`<br>`&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ol&gt;` |<ol><li>First item</li><li>Second item</li><li>Third item<ol><li>Indented item</li><li>Indented item</li></ol></li><li>Fourth item</li></ol> 
+### 有序列表最佳实践
+
+CommonMark和其他一些轻量级标记语言允许您使用括号（`）`）作为括号（例如，`1)第一项`），但不是所有的Markdown应用程序都支持这一点，所以从兼容性的角度来看，这不是一个很好的选择。为了兼容性，请仅使用句点。
+
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `1. First item`<br>`2. Second item` | `1) First item`<br>`2) Second item`
+
+##  无序列表
+
+要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表。
+
+| MarkDown 语法 | HTML | 语法预览 |
+|---|---|---|
+|` - First item`<br>`- Second item`<br>`- Third item`<br>`- Fourth item` | `&lt;ul&gt;`<br>`&lt;li&gt;First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ul&gt;` | <ul><li>First item</li><li>Second item</li><li>Third item</li><li>Fourth item</li></ul>
+| `* First item`<br>`* Second item`<br>`* Third item`<br>`* Fourth item` | `&lt;ul&gt;`<br>`&lt;li&gt;First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ul&gt;` | <ul><li>First item</li><li>Second item</li><li>Third item</li><li>Fourth item</li></ul>
+| `&#43; First item`<br>`&#43; Second item`<br>`&#43; Third item`<br>`&#43; Fourth item` | `&lt;ul&gt;`<br>`&lt;li&gt; First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ul&gt;` | <ul><li>First item</li><li>Second item</li><li>Third item</li><li>Fourth item</li></ul> | `- First item`<br>`- Second item`<br>`- Third item`<br>`&nbsp;&nbsp;&nbsp;- Indented item`<br>`&nbsp;&nbsp;&nbsp;- Indented item <br>`- Fourth item` | 
+| `- First item`<br>`- Second item`<br>`- Third item`<br>`&nbsp;&nbsp;&nbsp;- Indented item`<br>`&nbsp;&nbsp;&nbsp;- Indented item`<br>`- Fourth item ` | `&lt;ul&gt;`<br>`&lt;li&gt;First item&lt;/li&gt;`<br>`&lt;li&gt;Second item&lt;/li&gt;`<br>`&lt;li&gt;Third item&lt;/li&gt;`<br>`&lt;li&gt;Fourth item&lt;/li&gt;`<br>`&lt;/ul&gt;` | <ul><li>First item</li><li>Second item</li><li>Third item<ul><li>Indented item</li><li>Indented item</li></ul></li><li>Fourth item</li></ul> 
+
+###  无序列表最佳实践
+
+降价应用程序不同意如何处理同一列表中的不同分隔符。为了兼容性，不要在同一列表中混合匹配分隔符—选择一个并坚持使用它。
+
+| ✅ Do this | ❌ Don't to do this |
+|---|---|
+| ` - First item`<br>`- Second item`<br>`- Third item`<br>`- Fourth item` | `+ First item`<br>`* Second item`<br>`- Third item`<br>`+ Fourth item`
+
+## 在列表中嵌套其他元素
+
+要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符，如下例所示：
+
+### **段落**
+
+```code
+
+*   This is the first list item.
+*   Here's the second list item.
+
+    I need to add another paragraph below the second list item.
+
+*   And here's the third list item.
+
+```
+
+渲染效果如下：
+
+*   This is the first list item.
+*   Here's the second list item.
+
+    I need to add another paragraph below the second list item.
+
+*   And here's the third list item.
+
+**引用块**
+
+```code
+*   This is the first list item.
+*   Here's the second list item.
+
+    > A blockquote would look great below the second list item.
+
+*   And here's the third list item.
+```
+
+渲染效果如下：
+
+*   This is the first list item.
+*   Here's the second list item.
+
+    > A blockquote would look great below the second list item.
+
+*   And here's the third list item.
+
+#### **代码块**
+
+代码块通常采用四个空格或一个制表符缩进。当它们被放在列表中时，请将它们缩进八个空格或两个制表符。
+
+```code
+1.  Open the file.
+2.  Find the following code block on line 21:
+
+        <html>
+          <head>
+            <title>Test</title>
+          </head>
+
+3.  Update the title to match the name of your website.
+```
+
+渲染效果如下：
+
+1.  Open the file.
+2.  Find the following code block on line 21:
+
+        &lt;html&gt;
+          &lt;head&gt;
+            &lt;title&gt;Test&lt;/title&gt;
+          &lt;/head&gt;
+
+3.  Update the title to match the name of your website.
+
+**图片**
+
+```code
+1.  Open the file containing the Linux mascot.
+2.  Marvel at its beauty.
+
+    ![Tux, the Linux mascot](/assets/images/tux.png)
+
+3.  Close the file.
+```
+
+1.  Open the file containing the Linux mascot.
+2.  Marvel at its beauty.
+
+    ![markdown logo](./logo.png)
+
+3.  Close the file.
+
+**列表**
+
+You can nest an unordered list in an ordered list, or vice versa.
+
+```code
+1. First item
+2. Second item
+3. Third item
+    - Indented item
+    - Indented item
+4. Fourth item
+```
+
+渲染效果如下：
+
+1. First item
+2. Second item
+3. Third item
+    - Indented item
+    - Indented item
+4. Fourth item
+
+	</textarea><br><br>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md_blockquotes.html">引用语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_code.html">代码语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href {
+		  margin: 0px; padding: 0px; width: auto;
+	  }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }
+	  .footer-right { float: right; color: green; }
+	</style>
+	<title>MarkDown 分隔线语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# MarkDown 分隔线语法
+
+要创建分隔线，请在单独一行上使用三个或多个星号 (&#42;&#42;&#42;)、破折号 (&#45;&#45;&#45;) 或下划线 (&#95;&#95;&#95;) ，并且不能包含其他内容。
+
+```code
+&#42;&#42;&#42;
+
+&#45;&#45;&#45;
+
+&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;
+```
+
+以上三个分隔线的渲染效果看起来都一样：
+
+---
+
+## 分隔线（Horizontal Rule）用法最佳实践
+
+为了兼容性，请在分隔线的前后均添加空白行。
+
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `Try to put a blank line before...`<br><br>`---`<br><br>`...and after a horizontal rule.`  | `Without blank lines, this would be a heading.`<br>`---`<br>`Don't do this!` |
+
+	</textarea>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md_code.html">代码语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_link.html">链接语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>

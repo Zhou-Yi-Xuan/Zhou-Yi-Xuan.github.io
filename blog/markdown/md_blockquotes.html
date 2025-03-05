@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href {
+		  margin: 0px; padding: 0px; width: auto;
+	  }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }
+	  .footer-right { float: right; color: green; }
+	</style>
+	<title>MarkDown 引用语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# MarkDown 引用语法
+
+要创建块引用，请在段落前添加一个 `&gt;` 符号。
+
+```code
+&gt;&nbsp; Dorothy followed her through many of the beautiful rooms in her castle.
+```
+>  Dorothy followed her through many of the beautiful rooms in her castle.
+
+## 多个段落的块引用
+
+块引用可以包含多个段落。为段落之间的空白行添加一个 &gt; 符号。
+
+```code
+&gt; Dorothy followed her through many of the beautiful rooms in her castle.
+&gt;
+&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+渲染效果如下：
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+## 嵌套块引用
+
+块引用可以嵌套。在要嵌套的段落前添加一个 &gt;&gt; 符号。
+
+```code
+&gt; Dorothy followed her through many of the beautiful rooms in her castle.
+&gt;
+&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+渲染效果如下：
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+>> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+## 带有其它元素的块引用
+
+块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。
+
+```code
+&gt; &#35;&#35;&#35;&#35; The quarterly results look great!
+&gt;
+&gt; - Revenue was off the chart.
+&gt; - Profits were higher than ever.
+&gt;
+&gt;  *Everything* is going according to **plan**.
+```
+
+渲染效果如下：
+
+> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+>  *Everything* is going according to **plan**.
+
+	</textarea>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md_emphasis.html">强调语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_lists.html">列表语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>

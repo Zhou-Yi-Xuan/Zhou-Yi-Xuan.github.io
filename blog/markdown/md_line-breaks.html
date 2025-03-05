@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href {
+		  margin: 0px; padding: 0px; width: auto;
+	  }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }
+	  .footer-right { float: right; color: green; }
+	</style>
+	<title>MarkDown 换行语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# Markdown 换行语法
+
+在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(`&lt;br&gt;`)。
+
+| MarkDown 语法 | HTML | 预览效果 |
+|---|---|---|
+| `This is the first line.`<br>`And this is the second line. ` | `&lt;p&gt;This is the first line.&lt;br&gt;`<br>`And this is the second line.&lt;/p&gt;` | This is the first line.<br>And this is the second line.
+
+## 换行（Line Break）用法的最佳实践
+
+几乎每个 Markdown 应用程序都支持两个或多个空格进行换行，称为 `结尾空格` （`trailing whitespace` ) 的方式，但这是有争议的，因为很难在编辑器中直接看到空格，并且很多人在每个句子后面都会有意或无意地添加两个空格。由于这个原因，你可能要使用除结尾空格以外的其它方式来换行。幸运的是，几乎每个 Markdown 应用程序都支持另一种换行方式：HTML 的 &lt;br&gt; 标签。
+
+为了兼容性，请在行尾添加“结尾空格”或 HTML 的 &lt;br&gt; 标签来实现换行。
+
+还有两种其他方式我并不推荐使用。CommonMark 和其它几种轻量级标记语言支持在行尾添加反斜杠 (`\`) 的方式实现换行，但是并非所有 Markdown 应用程序都支持此种方式，因此从兼容性的角度来看，不推荐使用。并且至少有两种轻量级标记语言支持无须在行尾添加任何内容，只须键入回车键（`return`）即可实现换行。
+
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `First line with two spaces after.`<br>`And the next line.`<br><br>`First line with the HTML tag after.&lt;br&gt;`<br>`And the next line.` | `First line with a backslash after.\ `<br>`And the next line.`<br><br>`First line with nothing after.`<br>`And the next line.`
+
+	</textarea>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md_paragraphs.html">段落语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_emphasis.html">强调语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+</html>

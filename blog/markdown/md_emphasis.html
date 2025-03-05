@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href {
+		  margin: 0px; padding: 0px; width: auto;
+	  }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }
+	  .footer-right { float: right; color: green; }
+	</style>
+	<title>MarkDown 强调语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# MarkDown 强调语法
+
+通过将文本设置为粗体或斜体来强调其重要性。
+
+## 粗体 (Bold)
+
+要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。
+
+| MarkDown 语法 | HTML | 语法预览 |
+|---|---|---|
+| `I just love &#42;&#42; bold text &#42;&#42;.` | `I just love &lt;strong&gt; bold text &lt;/strong&gt;.` | I just love **bold text**.
+| `I just love &#95;&#95; bold text &#95;&#95;.` | `I just love &lt;strong&gt; bold text &lt;/strong&gt;.` | I just love **bold text**.
+| `Love&#42;&#42;is&#42;&#42;bold` | `Love&lt;strong&gt;is&lt;/strong&gt;bold` | Love**is**bold
+
+### 粗体（Bold）用法最佳实践
+
+Markdown 应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。
+
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `Love &#42;&#42;is&#42;&#42; bold.` | `Love &#95;&#95;is&#95;&#95;bold`
+
+## 斜体（Italic）
+
+要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。
+
+| MarkDown 语法 | HTML | 语法预览
+|---|---|---|
+| `Italicized text is the &#42;cat's meow&#42;.` | `Italicized text is the &lt;em&gt;cat's meowl&lt;/em&gt;.` | `Italicized text is the *cat’s* meow.`
+| `Italicized text is the &#95;cat's meow&#95;.` | `Italicized text is the &lt;em&gt;cat's meowl&lt;/em&gt;.` | `Italicized text is the _cat’s_ meow.`
+| `A &#95;cat&#95;meow` | `A&lt;em&gt;cat&lt;/em&gt;meow` | `Acatmeow`
+
+### 斜体（Italic）用法的最佳实践
+
+要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。
+
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `A&#42;cat&#42;meow` | `A&#95;cat&#95;meow`
+
+## 粗体（Bold）和斜体（Italic）
+
+要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格
+
+| MarkDown 语法 | HTML | 语法预览
+|---|---|---|
+| `This text is &#42;&#42;&#42;really important.&#42;&#42;&#42;` | `This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.` | `This text is ***really important.*** `
+| `This text is &#95;&#95;&#95;really important&#95;&#95;&#95;.` | `This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.` | `This text is ***really important.*** `
+| `This text is &#95;&#95;&#42;really important&#42;&#95;&#95;.` | `This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.` | `This text is ***really important.*** `
+| `This text is &#42;&#42;&#95;really important&#95;&#42;&#42;*.` | `This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.` | `This text is ***really important.***`
+| `This is really&#42;&#42;&#42;very&#42;&#42;&#42;important text.` | `really&lt;strong&gt;&lt;em&gt;very&lt;/em&gt;&lt;/strong&gt;important text.` | `This is<br>really***very***important text.`
+
+### 粗体（Bold）和斜体（Italic）用法的最佳实践
+
+Markdown 应用程序在处理单词或短语中间添加的下划线上并不一致。为了实现兼容性，请使用星号将单词或短语的中间部分加粗并以斜体显示，以示重要。
+
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `This is really&#42;&#42;&#42;very&#42;&#42;&#42;important text.` | `This is really&#95;&#95;&#95;very&#95;&#95;&#95;important text.`
+
+
+	</textarea>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md_line-breaks.html">换行语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_blockquotes.html">引用语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>

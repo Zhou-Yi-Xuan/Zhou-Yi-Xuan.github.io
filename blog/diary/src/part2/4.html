@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<style>
+@media (max-width: 767px) { body { padding: 15px; } }
+body {
+	box-sizing: border-box; min-width: 200px;
+	max-width: 980px; margin: 0 auto; padding: 45px;
+}
+</style>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="../../include/marked.min.js"></script>
+    <link rel="stylesheet" href="../../include/markdown-light.min.css">
+	<link rel="icon type" href="../../imgs/title.jpeg">
+	<title>HIStory 2-4</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# **第二部分 - 第四节**
+
+## **25.3.1 ~ 25.5.2**
+
+	</textarea><br><br>
+<div style="margin: 0px; padding: 0px; width: auto;">
+  <div style="float: left; text-align: center;">
+	<h4>← <a href="./3.html">第三节</a></h4>
+  </div>
+  <div style="float: right; text-align: center;">
+	<h4><a href="./5.html">第五节</a> →</h4>
+  </div>
+</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>

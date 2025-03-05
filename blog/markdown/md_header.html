@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href {
+		  margin: 0px; padding: 0px; width: auto;
+	  }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }
+	  .footer-right { float: right; color: green; }
+	</style>
+	<title>MarkDown 标题语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# **MarkDown 标题语法**
+要创建标题，请在单词或短语前面添加井号 (`&#35;`) 。`&#35;` 的数量代表了标题的级别。例如，添加三个 `&#35;` 表示创建一个三级标题 (`&lt;h3&gt;`) (例如：` &#35;&#35;&#35; My Header `)。
+|**MarkDown 语法** | HTML | 预览效果 |
+|----|----|----|
+| `&#35; Heading level 1` | `&lt;h1&gt;Heading level 1&lt;/h1&gt;` | <strong style="font-size:34px">Heading level 1</strong> |
+| `&#35;&#35; Heading level 2` | `&lt;h2&gt;Heading level 2&lt;/h2&gt;` | <strong style="font-size:29px">Heading level 2</strong> |
+| `&#35;&#35;&#35; Heading level 3` | `&lt;h3&gt;Heading level 3&lt;/h3&gt;` | <strong style="font-size:24px">Heading level 3</strong> |
+| `&#35;&#35;&#35;&#35; Heading level 4` | `&lt;h4&gt;Heading level 4&lt;/h4&gt;` | <strong style="font-size:19px">Heading level 4</strong> |
+| `&#35;&#35;&#35;&#35;&#35; Heading level 5` | `&lt;h5&gt;Heading level 5&lt;/h5&gt;` | <strong style="font-size:14px">Heading level 5</strong> |
+| `&#35;&#35;&#35;&#35;&#35;&#35; Heading level 6` | `&lt;h6&gt;Heading level 6&lt;/h6&gt;` | <strong style="font-size:9px">Heading level 6</strong> |
+## **可选语法**
+还可以在文本下方添加任意数量的 == 号来标识一级标题，或者 -- 号来标识二级标题。
+| MarkDown 语法 | HTML | 预览效果 |
+|---|---|---|
+| `Heading level 1`<br>`===============` | `&lt;h1&gt;Heading level 1&lt;/h1&gt;` | <strong style="font-size:34px;">Heading level 1</strong>
+| `Heading level 2`<br>`---------------` | `&lt;h2&gt;Heading level 2&lt;/h2&gt;` | <strong style="font-size:29px;">Heading level 2</strong>
+
+## **最佳实践**
+
+不同的 Markdown 应用程序处理 `#` 和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 `#` 和标题之间进行分隔。
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `&#35; Here's a Heading` | `&#35;Here's a Heading` |
+
+	</textarea>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md.html">基本语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_paragraphs.html">段落语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href {
+		  margin: 0px; padding: 0px; width: auto;
+	  }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }
+	  .footer-right { float: right; color: green; }
+
+	</style>
+	<title>MarkDown 段落语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# **MarkDown 段落语法**
+
+要创建段落，请使用空白行将一行或多行文本进行分隔。
+| MarkDown 语法 | HTML | 预览效果 |
+|---|---|---|
+| `I really like using Markdown.`<br><br>`I think I'll use it to format all of my documents from now on.` | `&lt;p&gt;I really like using Markdown.&lt;/p&gt;`<br><br>`&gt;p&lt;I think I'll use it to format all of my documents from now on.&lt;/p&gt;` |`I really like using Markdown.`<br><br>`I think I'll use it to format all of my documents from now on. `
+
+## 段落（Paragraph）用法的最佳实
+
+不要用空格（spaces）或制表符（ tabs）缩进段落。
+| ✅ Do this | ❌ Don't do this |
+|---|---|
+| `Don't put tabs or spaces in front of your paragraphs.`<br><br>`Keep lines left-aligned like this.` | `&nbsp;&nbsp;&nbsp;This can result in unexpected formatting problems.`<br><br>`&nbsp;&nbsp;&nbsp;Don't add tabs or spaces in front of paragraphs.` |
+	</textarea>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md_header.html">标题语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_line-breaks.html">换行语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+</html>

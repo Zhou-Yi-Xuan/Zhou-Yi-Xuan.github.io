@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<style>
+@media (max-width: 767px) { body { padding: 15px; } }
+body {
+	box-sizing: border-box; min-width: 200px;
+	max-width: 980px; margin: 0 auto; padding: 45px;
+}
+.footer-href { margin: 0px; padding: 0px; width: auto; }
+.footer-left{ float: left: color: green; }
+.footer-right { float: right: color: green; }
+</style>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<link rel="icon type" href="./logo.png" />
+	<title>MarkDown</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# **Markdown 表格**
+
+要添加表，请使用三个或多个连字符（`---`）创建每列的标题，并使用管道（`|`）分隔每列。您可以选择在表的任一端添加管道。
+
+```markdown
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+```
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
+单元格宽度可以变化，如下所示。呈现的输出将看起来相同。
+
+```markdown
+| Syntax | Description |
+| --- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+```
+
+**Tip:** 使用连字符和管道创建表可能很麻烦。为了加快该过程，请尝试使用Markdown Tables Generator。使用图形界面构建表，然后将生成的Markdown格式的文本复制到文件中。
+
+## **对齐**
+
+您可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（`:`），将列中的文本对齐到左侧，右侧或中心。
+
+```markdown
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+```
+
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+
+## **格式化表格中的文字**
+
+您可以在表格中设置文本格式。例如，您可以添加链接，代码（仅反引号（`&acute;`）中的单词或短语，而不是代码块）和强调。
+
+您不能添加标题，块引用，列表，水平规则，图像或HTML标签。
+
+## **在表中转义管道字符**
+
+您可以使用表格的HTML字符代码（`&amp;#124;`）在表中显示竖线（`|`）字符。
+
+	</textarea><br><br>
+  <div class="footer-href">
+    <div class="footer-left">
+	  <h4 style="text-align: left;">←<a href="./md.html">基本语法</a></h4>
+	</div><div class="footer-right">
+	  <h4 style="text-align: right;"><a href="./fenced-code-blocks.html">围栏代码块语法</a>→</h4>
+	</div>
+  </div>
+
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>

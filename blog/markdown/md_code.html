@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+	<style>
+	  @media (max-width: 767px) { body { padding: 15px; } }
+	  body { box-sizing: border-box;
+    	   min-width: 200px;
+           max-width: 980px;
+           margin: 0 auto;
+           padding: 45px;
+	  }
+	  .footer-href { margin: 0px; padding: 0px; width: auto; }
+	  .footer-href a { text-decoration: none; }	  
+	  .footer-left { float: left; color: green; }.footer-right { float: right; color: green;
+	  }
+	</style>
+	<title>MarkDown 代码语法</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	<textarea id="$t" style="display: none">
+# MarkDown 代码语法
+
+要将单词或短语表示为代码，请将其包裹在反引号 (` `` `) 中。
+
+| MarkDown 语法 | HTML | 语法预览 |
+|---|---|---|
+| `At the command prompt, type ``&#96;nano&#96;`.` | `At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.` | At the command prompt, type `nano`.
+
+## 转义反引号
+
+如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号(` &#96;&#96; `)中。
+
+| MarkDown 语法 | HTML | 语法预览 |
+|---|---|---|
+| `&#96;&#96;Use &#96;code&#96; in your Markdown file.&#96;&#96;` | `&lt;code&gt;Use `&#96;code&#96;` in your Markdown file.&lt;/code&gt;` | ``Use `code` in your Markdown file.``
+
+##  代码块
+
+要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。
+```code	
+  &lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+  &lt;/html&gt;
+```
+渲染效果如下：
+
+	&lt;html&gt;
+	  &lt;head&gt;
+	  &lt;/head&gt;
+	&lt;/html&gt;
+
+**Note:** 要创建不用缩进的代码块，请使用 [围栏式代码块（fenced code blocks）. ](./index.html)
+
+	</textarea>
+	<div class="footer-href">
+	  <div class="footer-left" style="text-align: left;">
+	    <h4 style="text-aglin:left;">←<a href="./md_lists.html">列表语法</a></h4>
+	  </div>
+	  <div class="footer-right">
+	    <h4 style="text-aglin:right;"><a href="./md_horizontal-rules.html">分割线语法</a>→</h4>
+	  </div>
+	</div>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>
