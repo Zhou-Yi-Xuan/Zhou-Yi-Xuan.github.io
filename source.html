@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<style>
+@media (max-width: 767px) { body { padding: 15px; } }
+body {
+	box-sizing: border-box; min-width: 200px;
+	max-width: 980px; margin: 0 auto; padding: 45px;
+}
+</style>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="./include/github-markdown-dark.css"> 
+	  <link rel="icon type" href="./images/title.jpeg">
+    <script src="./include/marked.min.js"></script>
+	  <title>source</title>
+  </head>
+  <body>
+    <div id="$m" class="markdown-body"></div>
+	  <textarea id="$t" style="display: none">
+	  </textarea>
+  </body>
+  <script>$m.innerHTML = marked.parse($t.value);</script>
+  </body>
+</html>
